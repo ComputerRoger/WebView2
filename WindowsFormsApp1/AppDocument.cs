@@ -6,21 +6,34 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-	public class AppDocument
+	public interface IAppDocument
 	{
+		IBrowserDocument BrowserDocument { get; }
+	}
 
-		BrowserDocument m_BrowserDocument;
+	public class AppDocument : IAppDocument
+	{
+		IBrowserDocument m_BrowserDocument;
+		MainForm m_MainForm;
 
-		public AppDocument()
+		public AppDocument( IBrowserDocument browserDocument )
 		{
-			m_BrowserDocument = new BrowserDocument();
+			m_BrowserDocument = browserDocument;
+			m_MainForm = new MainForm( this );
 		}
 
-		public BrowserDocument BrowserDocument
+		public IBrowserDocument BrowserDocument
 		{
 			get
 			{
 				return ( m_BrowserDocument );
+			}
+		}
+		public MainForm MainForm
+		{
+			get
+			{
+				return m_MainForm;
 			}
 		}
 	}

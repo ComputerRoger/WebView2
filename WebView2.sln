@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.757
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebView2.WinForms", "WebView2.WinForms\WebView2.WinForms.csproj", "{5CECFA1A-348F-49A1-B50D-EDCD5000245E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebView2.WinForms.Sample", "WebView2.WinForms.Sample\WebView2.WinForms.Sample.csproj", "{32ACF230-7992-4833-8A91-54D8276085E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{1CF9214A-A57C-43CC-81DD-C50EC265B170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppWebView", "ConsoleAppWebView\ConsoleAppWebView.csproj", "{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{1CF9214A-A57C-43CC-81DD-C50EC265B170}.Release|x64.Build.0 = Release|Any CPU
 		{1CF9214A-A57C-43CC-81DD-C50EC265B170}.Release|x86.ActiveCfg = Release|Any CPU
 		{1CF9214A-A57C-43CC-81DD-C50EC265B170}.Release|x86.Build.0 = Release|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Debug|x64.Build.0 = Debug|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Debug|x86.Build.0 = Debug|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Release|x64.ActiveCfg = Release|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Release|x64.Build.0 = Release|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Release|x86.ActiveCfg = Release|Any CPU
+		{A5D3D167-045C-4924-8EA5-A93A49E2B9C0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

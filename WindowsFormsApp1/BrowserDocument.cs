@@ -7,7 +7,15 @@ using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
-	public class BrowserDocument
+	public interface IBrowserDocument
+	{
+		String DomText { get; set; }
+		String XmlText { get; set; }
+		string DomNoScript();
+		string XmlNoScript();
+		Uri Uri { get; set; }
+	}
+	public class BrowserDocument : IBrowserDocument
 	{
 		Uri m_Uri;
 		string m_DomText;
@@ -53,7 +61,6 @@ namespace WindowsFormsApp1
 
 		//	RegexOptions.Singleline
 		///	Use single-line mode, where the period(.) matches every character including \n. ( instead of every character except \n). 
-
 
 		public static string RemoveTags( string rawText, string tagText )
 		{
@@ -163,7 +170,6 @@ namespace WindowsFormsApp1
 
 			text = RemoveScript1Tags( rawText );
 
-
 			text = RemoveScriptTags( text );
 
 			text = RemoveMetaTags( text );
@@ -183,6 +189,5 @@ namespace WindowsFormsApp1
 @-webkit-keyframes qs-timer {0%{}}
 //]]>//
 		**/
-
 	}
 }
