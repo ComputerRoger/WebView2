@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public interface IAppDocument
 	{
@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
 
 	public class AppDocument : IAppDocument
 	{
-		IBrowserDocument m_BrowserDocument;
-		MainForm m_MainForm;
+		readonly IBrowserDocument m_BrowserDocument;
+		readonly MainForm m_MainForm;
 
 		public AppDocument( IBrowserDocument browserDocument )
 		{

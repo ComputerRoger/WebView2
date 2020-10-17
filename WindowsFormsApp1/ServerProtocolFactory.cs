@@ -6,12 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
-	public interface IProtocolFactory
-	{
-		IServerProtocol CreateServerProtocol( Socket clientSocket, ILogger logger );
-	}
 	public class ServerProtocolFactory : IProtocolFactory
 	{
 		public IServerProtocol CreateServerProtocol( Socket clientSocket, ILogger logger )

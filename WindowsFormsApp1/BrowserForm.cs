@@ -12,11 +12,11 @@ using MtrDev.WebView2.Wrapper;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public partial class BrowserForm : Form
 	{
-		private IAppDocument m_AppDocument;
+		private readonly IAppDocument m_AppDocument;
 
 		public BrowserForm( IAppDocument appDocument )
 		{
@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
 			BrowserControl.Navigate( url );
 		}
 
-		public string htmlToXml( string htmlText )
+		public string HtmlToXml( string htmlText )
 		{
 			HtmlAgilityPack.HtmlDocument htmlDocument;
 			string xmlText;
@@ -79,11 +79,11 @@ namespace WindowsFormsApp1
 			browserDocument.DomText = htmlText;
 
 			string xmlText;
-			xmlText = htmlToXml( htmlText );
+			xmlText = HtmlToXml( htmlText );
 			browserDocument.XmlText = xmlText;
 
-			string clearHtml = BrowserDocument.RemoveNonContent( htmlText );
-			string clearXml = BrowserDocument.RemoveNonContent( xmlText );
+			//string clearHtml = BrowserDocument.RemoveNonContent( htmlText );
+			//string clearXml = BrowserDocument.RemoveNonContent( xmlText );
 		}
 
 		protected void NavigationCompleted( object sender, MtrDev.WebView2.Wrapper.NavigationCompletedEventArgs e )

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace AsyncSockets
 {
 	partial class BrowserForm
 	{

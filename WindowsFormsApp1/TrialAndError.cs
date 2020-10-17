@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public class TrialAndError
 	{
-		public static void test()
+		public static void TestTrialAndError()
 		{
 			//string text = "//<![CDATA[" +
 			//	"@-webkit-keyframes gb__a{ 0%{ opacity: 0} 50%{ opacity: 1} }" +

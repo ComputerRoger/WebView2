@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using System.Threading;         //	For Mutex.
 using System.IO;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public interface ILogger
 	{
-		void writeEntry( List<string> stringList );
-		void writeEntry( string text );
+		void WriteEntry( List<string> stringList );
+		void WriteEntry( string text );
 	}
 
 	public abstract class BaseLogger
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 	/// </summary>
 	public class ConsoleLogger : BaseLogger, ILogger
 	{
-		public void writeEntry( List<string> stringList )
+		public void WriteEntry( List<string> stringList )
 		{
 			mutex.WaitOne();
 			{
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
 			mutex.ReleaseMutex();
 		}
 
-		public void writeEntry( string text )
+		public void WriteEntry( string text )
 		{
 			mutex.WaitOne();
 			{
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
 
 	class FileLogger : BaseLogger, ILogger
 	{
-		private StreamWriter streamWriter;			//	Log file.
+		private readonly StreamWriter streamWriter;			//	Log file.
 
 		public FileLogger( string fileName )
 		{
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
 			streamWriter = new StreamWriter( fileName, isAppend );
 		}
 
-		public void writeEntry( List<string> stringList )
+		public void WriteEntry( List<string> stringList )
 		{
 			mutex.WaitOne();
 			{
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
 			mutex.ReleaseMutex();
 		}
 
-		public void writeEntry( string text )
+		public void WriteEntry( string text )
 		{
 			mutex.WaitOne();
 			{

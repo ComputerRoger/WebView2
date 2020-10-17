@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public interface IBrowserDocument
 	{

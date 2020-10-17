@@ -13,12 +13,12 @@ using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public class MainForm : Form
 	{
-		private System.ComponentModel.IContainer components = null;
-		private IAppDocument m_AppDocument;
+		private readonly System.ComponentModel.IContainer components = null;
+		private readonly IAppDocument m_AppDocument;
 
 		public MainForm( IAppDocument appDocument )
 		{
@@ -79,9 +79,11 @@ namespace WindowsFormsApp1
 			BrowserForm browserForm;
 
 			//	Create a modeless window.
-			browserForm = new BrowserForm( AppDocument );
+			browserForm = new BrowserForm( AppDocument )
+			{
+				Owner = this
+			};
 
-			browserForm.Owner = this;
 			browserForm.Show();
 			return ( browserForm );
 		}

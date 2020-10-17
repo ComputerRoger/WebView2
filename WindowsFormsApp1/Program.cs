@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Threading;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	static class Program
 	{
@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 		[STAThread]
 		static void Main()
 		{
-			TrialAndError.test();
+			TrialAndError.TestTrialAndError();
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault( false );
@@ -31,11 +31,12 @@ namespace WindowsFormsApp1
 			mainForm = appDocument.MainForm;
 
 			//	Provide a container for the TCP/IP server.
+			int serverPort = Properties.Settings.Default.BrowserServerPort;
 			int sizeThreadPool = Properties.Settings.Default.SizeThreadPool;
-			IThreadDispatcher threadDispatcher;
-			threadDispatcher = new PoolThreadDispatcher( sizeThreadPool );
-			TcpServer tcpServer;
-			tcpServer = new TcpServer( appDocument, threadDispatcher );
+			IProtocolFactory protocolFactory = new BrowserServerProtocolFactory();
+			ILogger logger = new ConsoleLogger();
+			IThreadDispatcher threadDispatcher = new PoolThreadDispatcher( sizeThreadPool );
+			TcpServer tcpServer = new TcpServer( serverPort, threadDispatcher, protocolFactory, logger );
 
 			//	Serve TCP/IP on a separate thread.
 			System.Threading.Thread serverThread;

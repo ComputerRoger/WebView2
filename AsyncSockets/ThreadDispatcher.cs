@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace AsyncSockets
 {
 	public interface IThreadDispatcher
 	{
@@ -31,14 +31,16 @@ namespace WindowsFormsApp1
 
 					//	A client has connected so create a thread to handle it.
 					ThreadStart clientThreadStart = new ThreadStart( serverProtocol.HandleClientConnection );
-					Thread clientThread = new Thread( clientThreadStart );
-					clientThread.IsBackground = true;
+					Thread clientThread = new Thread( clientThreadStart )
+					{
+						IsBackground = true
+					};
 					clientThread.Start();
-					logger.writeEntry( "Created and started Thread = " + clientThread.GetHashCode() );
+					logger.WriteEntry( "Created and started Thread = " + clientThread.GetHashCode() );
 				}
 				catch( System.IO.IOException ioException )
 				{
-					logger.writeEntry( "Exception = " + ioException.Message );
+					logger.WriteEntry( "Exception = " + ioException.Message );
 				}
 			}
 			//	Unreachable.
@@ -47,7 +49,7 @@ namespace WindowsFormsApp1
 
 	public class PoolThreadDispatcher : IThreadDispatcher
 	{
-		private int m_SizeThreadPool;
+		private readonly int m_SizeThreadPool;
 
 		public PoolThreadDispatcher()
 		{
@@ -70,16 +72,16 @@ namespace WindowsFormsApp1
 				Thread clientThread = new Thread( clientThreadStart );
 				clientThread.Start();
 				clientThread.IsBackground = true;
-				logger.writeEntry( "Created and started Thread = " + clientThread.GetHashCode() );
+				logger.WriteEntry( "Created and started Thread = " + clientThread.GetHashCode() );
 			}
 		}
 	}
 
 	public class DispatchLoop
 	{
-		private TcpListener m_TcpListener;
-		private ILogger m_Logger;
-		private IProtocolFactory m_ProtocolFactory;
+		private readonly TcpListener m_TcpListener;
+		private readonly ILogger m_Logger;
+		private readonly IProtocolFactory m_ProtocolFactory;
 
 		public DispatchLoop( TcpListener tcpListener, ILogger logger, IProtocolFactory protocolFactory )
 		{
@@ -106,7 +108,7 @@ namespace WindowsFormsApp1
 				}
 				catch( System.IO.IOException ioException )
 				{
-					m_Logger.writeEntry( "Exception = " + ioException.Message );
+					m_Logger.WriteEntry( "Exception = " + ioException.Message );
 				}
 			}
 			//	Unreachable.

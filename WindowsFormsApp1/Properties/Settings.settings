@@ -3,10 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="BrowserServerPort" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">50000</Value>
+      <Value Profile="(Default)">50500</Value>
     </Setting>
     <Setting Name="SizeThreadPool" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="ListenBacklogSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">500</Value>
     </Setting>
   </Settings>
 </SettingsFile>

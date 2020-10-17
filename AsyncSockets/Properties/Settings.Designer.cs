@@ -25,10 +25,46 @@ namespace AsyncSockets.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50500")]
-        public int BrowserServerPort {
+        [global::System.Configuration.DefaultSettingValueAttribute("64512")]
+        public int SizeTcpByteArray {
             get {
-                return ((int)(this["BrowserServerPort"]));
+                return ((int)(this["SizeTcpByteArray"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("65535")]
+        public int SizeTcpSendReceive {
+            get {
+                return ((int)(this["SizeTcpSendReceive"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("511")]
+        public int SizeListenBacklog {
+            get {
+                return ((int)(this["SizeListenBacklog"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50100")]
+        public int XBrowserServerPort {
+            get {
+                return ((int)(this["XBrowserServerPort"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string XBrowserServerName {
+            get {
+                return ((string)(this["XBrowserServerName"]));
             }
         }
         
@@ -38,15 +74,6 @@ namespace AsyncSockets.Properties {
         public int SizeThreadPool {
             get {
                 return ((int)(this["SizeThreadPool"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("500")]
-        public int ListenBacklogSize {
-            get {
-                return ((int)(this["ListenBacklogSize"]));
             }
         }
     }
