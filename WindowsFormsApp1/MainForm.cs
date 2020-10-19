@@ -13,7 +13,7 @@ using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 
-namespace AsyncSockets
+namespace BrowserFormServer
 {
 	public class MainForm : Form
 	{

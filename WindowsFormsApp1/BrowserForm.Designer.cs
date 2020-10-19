@@ -1,4 +1,4 @@
-﻿namespace AsyncSockets
+﻿namespace BrowserFormServer
 {
 	partial class BrowserForm
 	{

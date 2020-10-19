@@ -12,7 +12,7 @@ using MtrDev.WebView2.Wrapper;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 
-namespace AsyncSockets
+namespace BrowserFormServer
 {
 	public partial class BrowserForm : Form
 	{
