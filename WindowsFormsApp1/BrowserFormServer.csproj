@@ -99,6 +99,10 @@
       <Project>{5707848e-53d1-4485-bd9e-603153c3ebf6}</Project>
       <Name>AsyncSockets</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GeneralClassLibrary\GeneralClassLibrary.csproj">
+      <Project>{0570a7d1-7fbd-41f4-9615-773677f6c813}</Project>
+      <Name>GeneralClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebView2.WinForms\WebView2.WinForms.csproj">
       <Project>{5CECFA1A-348F-49A1-B50D-EDCD5000245E}</Project>
       <Name>WebView2.WinForms</Name>

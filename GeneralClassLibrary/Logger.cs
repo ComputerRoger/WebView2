@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;         //	For Mutex.
 using System.IO;
 
-namespace AsyncSockets
+namespace GeneralClassLibrary
 {
 	public interface ILogger
 	{

@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using AsyncSockets;
+using GeneralClassLibrary;
 
 namespace BrowserFormServer
 {
@@ -27,7 +28,7 @@ namespace BrowserFormServer
 		//	That is why HTTP is a connectionless protocol.
 		public void HandleClientConnection()
 		{
-			AsyncSockets.ILogger logger;
+			ILogger logger;
 			Socket clientSocket;
 
 			clientSocket = ClientSocket;
